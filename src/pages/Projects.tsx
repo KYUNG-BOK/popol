@@ -39,6 +39,16 @@ export default function Projects() {
                   thumbnail="images/github.JPG"
                 />
 
+                <ProjectCard
+                  title="첫 미니 프로젝트"
+                  subtitle="계산기 만들기"
+                  tags={["HTML/CSS", "JavaScript"]}
+                  desc="부트캠프 시작 후 처음 진행한 프로젝트입니다."
+                  demoHref="https://kyung-bok.github.io/team_project/%EC%9C%A4%EA%B2%BD%EB%B3%B5_4%EB%8B%A8%EA%B3%84/calculator.html"
+                  codeHref="https://github.com/KYUNG-BOK/KYUNG-BOk.github.io/tree/main/%EC%B0%90%EA%B3%84%EC%82%B0%EA%B8%B0"
+                  thumbnail="images/calculator.JPG"
+                />
+
                 <section id="sec-bok" className="contents" />
 
                 <ProjectCard
