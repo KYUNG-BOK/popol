@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# 🌟 Popol — Frontend Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+경험 기반 UI/UX에 집중한 개인 포트폴리오 프로젝트입니다.  
+React와 디자인 토큰을 활용해 **일관된 골드 테마**로 구성했습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## React Compiler
+- **React 19**, **TypeScript**, **Vite**
+- **Tailwind CSS**, Lucide Icons
+- **Framer Motion** (애니메이션)
+- Vercel (Deploy)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1️⃣ Clone & Install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/KYUNG-BOK/popol.git
+cd popol
+npm install # or npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️⃣ Run Dev Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+➡️ http://localhost:5173 자동 실행
+
+### 3️⃣ Build
+
+```bash
+npm run build
+```
+
+---
+
+## 📂 Folder Structure
+
+```txt
+src/
+  components/
+    timeline/       # Bootcamp timeline UI (bands, list 등 분리 구성)
+    hero/           # GoldParticles 등 상징 요소
+    typography/     # ShineText, 제목/텍스트 스타일
+    Page.tsx        # 레이아웃 기반 컴포넌트
+    Nav.tsx         # 상단 네비게이션
+  data/
+    bootcampTimeline.ts # 타임라인 일정 데이터
+  utils/
+    timeline.ts     # 공통 계산 로직 (퍼센트/날짜 변환 등)
+  theme/
+    token.ts        # 디자인 토큰 (골드 컬러 등)
+  pages/
+    Home.tsx
+    Stack.tsx
+    Projects.tsx
+    BootcampHistoryPage.tsx
+    Contact.tsx
+  assets/           # 이미지, 아이콘 등
+  main.tsx
+  index.css
+```
+
+---
+
+## ✨ Highlights
+
+- **골드 테마 디자인 토큰** 기반 UI 일관성
+- **Timeline 컴포넌트**: 정규 수업 + 병렬 활동 한눈에 확인 가능
+- **Framer Motion 인터랙션** 자연스럽게 적용
+- **사용자 중심 흐름** 강조한 프로젝트 카드 구성
+
+---
+
+## 🪪 License
+
+MIT License © Kyung Bok Yoon
