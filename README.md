@@ -60,7 +60,7 @@ src/
     Home.tsx
     Stack.tsx
     Projects.tsx
-    BootcampHistoryPage.tsx
+    Timeline.tsx
     Contact.tsx
   assets/           # 이미지, 아이콘 등
   main.tsx
