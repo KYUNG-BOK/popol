@@ -11,6 +11,7 @@ type Props = {
   codeHref?: string;
   thumbnail?: string;
   className?: string;
+  onOpen?: () => void;
 };
 
 export function ProjectCard({
@@ -21,10 +22,12 @@ export function ProjectCard({
   demoHref,
   codeHref,
   thumbnail,
+  onOpen,
   className = "",
 }: Props) {
   return (
     <motion.article
+      onClick={onOpen}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
       className={clsx(

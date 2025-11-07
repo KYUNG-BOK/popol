@@ -3,15 +3,36 @@ import { ProjectCard } from "../components/project/ProjectCard";
 import { TOKENS } from "../components/theme/token";
 import { TimelineRoad } from "../components/project/TimelineRoad";
 import { ShineText } from "../components/typography/ShineText";
+import { ProjectModal } from "../components/project/ProjectModal";
+import { useMemo, useState } from "react";
+import { PROJECTS, type ProjectMeta } from "../data/projects.data";
 
 export default function Projects() {
+  const [selected, setSelected] = useState<ProjectMeta | null>(null);
+  const open = (p: ProjectMeta) => setSelected(p);
+  const close = () => setSelected(null);
+
+  const pickByIds = (ids: string[]) =>
+    ids.map((id) => PROJECTS.find((p) => p.id === id)!).filter(Boolean);
+
+  const growth = useMemo(
+    () => pickByIds(["github-pages", "calculator", "bok-project", "ozflix"]),
+    []
+  );
+
+  const featured = useMemo(
+    () =>
+      pickByIds(["ozshop", "wizardofoz", "studyhub-admin", "studyhub-landing"]),
+    []
+  );
+
   return (
     <div className="min-h-screen" style={{ background: TOKENS.colors.bg }}>
       <Page maxW="max-w-[1400px] xl:max-w-[1600px]" className="px-3 sm:px-6">
         <div className="grid items-start gap-8 md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">
           <TimelineRoad />
           <div>
-            <section className="mt-2" id="sec-github">
+            <section className="mt-2" id="sec-growth">
               <h3
                 className="text-2xl font-bold tracking-tight select-none"
                 style={{
@@ -27,51 +48,20 @@ export default function Projects() {
                 GitHub Page에서 시작해, 쇼핑몰/어드민, 프로젝트 소개 사이트까지
                 확장했습니다.
               </p>
-
-              <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 min-[1400px]:grid-cols-2">
-                <ProjectCard
-                  title="GitHub Pages (초기)"
-                  subtitle="첫 개인 사이트"
-                  tags={["HTML/CSS", "JavaScript"]}
-                  desc="가장 볼품없던 출발점. 하지만 ‘배포 → 피드백 → 개선’ 루프를 시작하게 해준 중요한 첫 걸음."
-                  demoHref="https://kyung-bok.github.io/"
-                  codeHref="https://github.com/kyung-bok/kyung-bok.github.io"
-                  thumbnail="images/github.JPG"
-                />
-
-                <ProjectCard
-                  title="첫 미니 프로젝트"
-                  subtitle="계산기 만들기"
-                  tags={["HTML/CSS", "JavaScript"]}
-                  desc="부트캠프 시작 후 처음 진행한 프로젝트입니다."
-                  demoHref="https://kyung-bok.github.io/team_project/%EC%9C%A4%EA%B2%BD%EB%B3%B5_4%EB%8B%A8%EA%B3%84/calculator.html"
-                  codeHref="https://github.com/KYUNG-BOK/KYUNG-BOk.github.io/tree/main/%EC%B0%90%EA%B3%84%EC%82%B0%EA%B8%B0"
-                  thumbnail="images/calculator.JPG"
-                />
-
-                <section id="sec-bok" className="contents" />
-
-                <ProjectCard
-                  title="Bok Project"
-                  subtitle="개인 미니 프로젝트"
-                  tags={["React", "UI 실험"]}
-                  desc="첫 리액트 배포 사이트"
-                  demoHref="https://bok-project.vercel.app"
-                  codeHref="https://github.com/KYUNG-BOK/bok_project"
-                  thumbnail="images/bokproject.JPG"
-                />
-
-                <section id="sec-ozflix" className="contents" />
-
-                <ProjectCard
-                  title="OZFLIX"
-                  subtitle="영화 검색/무한스크롤 실습"
-                  tags={["React", "TMDB", "Infinite Scroll"]}
-                  desc="디바운스 검색, 반응형 상세/목록, 사용자 찜 목록까지."
-                  demoHref="https://ozflix.vercel.app"
-                  codeHref="https://github.com/KYUNG-BOK/react_mini"
-                  thumbnail="images/ozflix.JPG"
-                />
+              <div className="mt-4 grid gap-6 sm:grid-cols-2 min-[1400px]:grid-cols-2">
+                {growth.map((p) => (
+                  <ProjectCard
+                    key={p.id}
+                    title={p.title}
+                    subtitle={p.subtitle}
+                    tags={p.tags}
+                    desc={p.desc}
+                    demoHref={p.demoHref}
+                    codeHref={p.codeHref}
+                    thumbnail={p.thumbnail}
+                    onOpen={() => open(p)}
+                  />
+                ))}
               </div>
             </section>
 
@@ -92,56 +82,27 @@ export default function Projects() {
               </p>
 
               <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 min-[1400px]:grid-cols-4">
-                <ProjectCard
-                  title="OZ Shop"
-                  subtitle="메인 프로젝트 — 커머스"
-                  tags={["React", "JSX", "TailwindCSS", "Motion"]}
-                  desc="관리자 페이지, 반응형 상세 페이지, 소셜 로그인 등 사용자 흐름을 고려한 UX 구성."
-                  demoHref="https://ozshop-kappa.vercel.app"
-                  codeHref="https://github.com/Wizard-Of-Oz-b/Wizard-Of-Oz-FE05"
-                  thumbnail="images/ozshop.JPG"
-                />
-
-                <section id="sec-wiz" className="contents" />
-
-                <ProjectCard
-                  title="Wizards of Oz"
-                  subtitle="메인 프로젝트 소개"
-                  tags={["Vercel", "팀 소개", "디자인 시스템"]}
-                  desc="프로젝트 소개/팀 페이지 제작."
-                  demoHref="https://wizardofoz-seven.vercel.app"
-                  codeHref="#"
-                  thumbnail="images/wizardofoz.JPG"
-                />
-
-                <section id="sec-admin" className="contents" />
-
-                <ProjectCard
-                  title="StudyHub Admin"
-                  subtitle="익스턴십 관리자 페이지"
-                  tags={["React 19", "TypeScript", "TanStack Query"]}
-                  desc="팀 리드. 로그인, 리뷰 관리, 지원 내역 페이지 구현."
-                  demoHref="https://admin.ozcoding.site"
-                  codeHref="https://github.com/OZ-Coding-School/oz_externship_fe_03_team4"
-                  thumbnail="images/studyhub.JPG"
-                />
-
-                <section id="sec-hub-landing" className="contents" />
-
-                <ProjectCard
-                  title="StudyHub (소개)"
-                  subtitle="프로젝트 소개/랜딩"
-                  tags={["Vercel", "TypeScript", "GSAP"]}
-                  desc="익스턴십 프로젝트 및 팀 소개 랜딩 제작."
-                  demoHref="https://ozex3-fe4.vercel.app"
-                  codeHref="#"
-                  thumbnail="images/ex3.JPG"
-                />
+                {featured.map((p) => (
+                  <ProjectCard
+                    key={p.id}
+                    title={p.title}
+                    subtitle={p.subtitle}
+                    tags={p.tags}
+                    desc={p.desc}
+                    demoHref={p.demoHref}
+                    codeHref={p.codeHref}
+                    thumbnail={p.thumbnail}
+                    onOpen={() => open(p)}
+                  />
+                ))}
               </div>
             </section>
           </div>
         </div>
       </Page>
+
+      {/* 상세 모달 */}
+      <ProjectModal open={!!selected} onClose={close} project={selected} />
     </div>
   );
 }
