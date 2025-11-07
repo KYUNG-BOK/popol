@@ -6,7 +6,7 @@ export function Nav() {
   const location = useLocation();
 
   const base =
-    "relative px-10 py-2 rounded-lg text-sm transition-colors font-medium";
+    "relative inline-flex h-10 items-center px-6 rounded-lg text-sm font-medium leading-none transition-colors";
 
   const links = [
     { to: "/", label: "Home" },
@@ -25,7 +25,7 @@ export function Nav() {
         borderColor: TOKENS.colors.border,
       }}
     >
-      <ul className="relative flex gap-1">
+      <ul className="relative flex items-center gap-1">
         {links.map((l) => {
           const isActive = location.pathname === l.to;
           return (
