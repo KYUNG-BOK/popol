@@ -55,7 +55,7 @@ export function GoldHero() {
           >
             <GoldButton className="cursor-pointer">
               <Github className="mr-2 h-4 w-4" />
-              현재 사이트의 GitHub
+              레포지토리
             </GoldButton>
           </a>
         </div>
