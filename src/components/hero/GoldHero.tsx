@@ -5,6 +5,7 @@ import { NavLink } from "react-router";
 import { motion } from "framer-motion";
 import { Badge } from "./Badge";
 import { KPI } from "./KPI";
+import { Github } from "lucide-react";
 
 export function GoldHero() {
   return (
@@ -35,14 +36,27 @@ export function GoldHero() {
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <NavLink to="/projects">
-            <GoldButton>프로젝트 보기</GoldButton>
+            <GoldButton className="cursor-pointer">프로젝트 보기</GoldButton>
           </NavLink>
           <a
             href="https://github.com/kyung-bok"
             target="_blank"
             rel="noreferrer"
           >
-            <GhostButton>GitHub</GhostButton>
+            <GhostButton className="cursor-pointer">
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </GhostButton>
+          </a>
+          <a
+            href="https://github.com/KYUNG-BOK/popol"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GoldButton className="cursor-pointer">
+              <Github className="mr-2 h-4 w-4" />
+              현재 사이트의 GitHub
+            </GoldButton>
           </a>
         </div>
 
