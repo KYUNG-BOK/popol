@@ -25,7 +25,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://kyung-bok.github.io/",
     codeHref: "https://github.com/kyung-bok/kyung-bok.github.io",
     thumbnail: "images/github.JPG",
-    period: "2024.02",
+    period: "2025.06",
     team: "개인",
     role: "초기 포트폴리오 제작 및 배포",
     responsibilities: [
@@ -49,7 +49,7 @@ export const PROJECTS: ProjectMeta[] = [
     codeHref:
       "https://github.com/KYUNG-BOK/KYUNG-BOk.github.io/tree/main/%EC%B0%90%EA%B3%84%EC%82%B0%EA%B8%B0",
     thumbnail: "images/calculator.JPG",
-    period: "2024.03",
+    period: "2025.06",
     team: "개인",
     role: "프론트엔드 구현 및 스타일링",
     responsibilities: [
@@ -71,7 +71,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://bok-project.vercel.app",
     codeHref: "https://github.com/KYUNG-BOK/bok_project",
     thumbnail: "images/bokproject.JPG",
-    period: "2024.05",
+    period: "2025.07",
     team: "개인",
     role: "UI 및 구조 설계 전반",
     responsibilities: [
@@ -90,7 +90,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://ozflix.vercel.app",
     codeHref: "https://github.com/KYUNG-BOK/react_mini",
     thumbnail: "images/ozflix.JPG",
-    period: "2024.07",
+    period: "2025.08",
     team: "개인",
     role: "전체 UI 및 데이터 로직 설계",
     responsibilities: [
@@ -110,7 +110,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://ozshop-kappa.vercel.app",
     codeHref: "https://github.com/Wizard-Of-Oz-b/Wizard-Of-Oz-FE05",
     thumbnail: "images/ozshop.JPG",
-    period: "2024.09",
+    period: "2025.09",
     team: "5인 팀 (FE 3명, BE 2명)",
     role: "프론트엔드 리드 / UI 구조 설계",
     responsibilities: [
@@ -139,7 +139,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://wizardofoz-seven.vercel.app",
     codeHref: "#",
     thumbnail: "images/wizardofoz.JPG",
-    period: "2024.09",
+    period: "2025.10",
     team: "5인 팀 (FE 3명, BE 2명)",
     role: "기획 및 퍼블리싱",
     responsibilities: [
@@ -158,7 +158,7 @@ export const PROJECTS: ProjectMeta[] = [
     demoHref: "https://admin.ozcoding.site",
     codeHref: "https://github.com/OZ-Coding-School/oz_externship_fe_03_team4",
     thumbnail: "images/studyhub.JPG",
-    period: "2025.01 ~ 2025.11",
+    period: "2025.10 ~ 2025.11",
     team: "5인 팀 (FE 5)",
     role: "프론트엔드 팀장 / 전반 설계",
     responsibilities: [
