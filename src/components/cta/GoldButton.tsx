@@ -14,7 +14,7 @@ export function GoldButton({
       whileHover={{ y: -1 }}
       whileTap={{ scale: 0.98 }}
       className={
-        "relative inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold cursor-pointer" +
+        "relative inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold" +
         "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ring-offset-black " +
         className
       }
@@ -41,7 +41,7 @@ export function GhostButton({
       whileHover={{ y: -1 }}
       whileTap={{ scale: 0.98 }}
       className={
-        "inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold cursor-pointer" +
+        "inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold" +
         "text-white/90 hover:bg-white/5 " +
         className
       }
