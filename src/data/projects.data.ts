@@ -185,7 +185,8 @@ export const PROJECTS: ProjectMeta[] = [
     tags: ["Vercel", "TypeScript", "GSAP"],
     desc: "익스턴십 팀의 프로젝트 홍보용 랜딩 사이트로 GSAP 기반 인터랙션 구현.",
     demoHref: "https://ozex3-fe4.vercel.app",
-    codeHref: "#",
+    codeHref:
+      "https://github.com/oz-externship3-fe-4/oz-externship-fe4-showcase/",
     thumbnail: "images/ex3.JPG",
     period: "2025.11",
     team: "5인 팀 (FE 5)",

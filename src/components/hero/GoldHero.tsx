@@ -48,7 +48,7 @@ export function GoldHero() {
               GitHub
             </GhostButton>
           </a>
-          <a
+          {/* <a
             href="https://github.com/KYUNG-BOK/popol"
             target="_blank"
             rel="noreferrer"
@@ -57,7 +57,7 @@ export function GoldHero() {
               <Github className="mr-2 h-4 w-4" />
               레포지토리
             </GoldButton>
-          </a>
+          </a> */}
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/60 select-none">
