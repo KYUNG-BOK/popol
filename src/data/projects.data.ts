@@ -190,7 +190,7 @@ export const PROJECTS: ProjectMeta[] = [
     thumbnail: "images/ex3.JPG",
     period: "2025.11",
     team: "5인 팀 (FE 5)",
-    role: "애니메이션 및 인터랙션 담당",
+    role: "프로젝트 리드, 애니메이션 및 인터랙션 담당",
     responsibilities: [
       "GSAP 애니메이션 및 스크롤 인터랙션 연출",
       "페이지 구조/색상/타이포그래피 조율",

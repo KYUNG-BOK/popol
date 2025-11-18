@@ -92,7 +92,7 @@ export const BOOTCAMP_STEPS: Step[] = [
     title: "수료",
     desc: "종료! 수고하셨습니다!",
     start: "2025-11-19T00:00:00+09:00",
-    end: "2025-11-19T23:59:59+09:00",
+    end: "2025-11-19T18:40:59+09:00",
     badge: "FINAL",
   },
 ];
